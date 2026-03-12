@@ -105,3 +105,6 @@ Desktop.ini
 !data/pre_qc_summary/snp_preqc_report.docx
 !data/qc/qc_report_*.txt
 !data/qc/imputation/imputation_log_*.txt
+
+# --- Whitelist notes directory (all files) ---
+!notes/**
