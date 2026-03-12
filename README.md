@@ -19,8 +19,8 @@ All large files (GDS, genotype matrices, phenotype files, ClimateNA extracts) li
 ## Data (not tracked)
 
 Primary data paths (local):
-- `C:/Users/bratclif/dfir_gds/` — GDS files, QC outputs
-- `D:/OneDrive - NRCan RNCan/gs/doug-fir/data/` — phenotype masterfiles, pedigree, ClimateNA
+- `D:\OneDrive - NRCan RNCan\gs\doug-fir\` — work (GDS files, QC outputs, scripts)
+- `D:\OneDrive\projects\df\` — home
 
 ## Requirements
 
