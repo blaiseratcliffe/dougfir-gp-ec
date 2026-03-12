@@ -20,6 +20,10 @@ tools/
 !.gitignore
 !README.md
 !LICENSE
+!CLAUDE.md
+
+# --- Block Claude Code local settings ---
+.claude/
 
 # --- Explicitly block large / sensitive files even if somehow staged ---
 # GDS and genomic data
@@ -96,3 +100,8 @@ Desktop.ini
 *.bak
 *.swp
 *~
+
+# --- Whitelist pipeline logs and reports (must be AFTER deny rules) ---
+!data/pre_qc_summary/snp_preqc_report.docx
+!data/qc/qc_report_*.txt
+!data/qc/imputation/imputation_log_*.txt
