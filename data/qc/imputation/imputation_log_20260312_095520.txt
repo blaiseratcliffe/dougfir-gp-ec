@@ -1,0 +1,189 @@
+[2026-03-12 09:55:20] [INFO  ] === Douglas-fir Imputation Pipeline === 
+[2026-03-12 09:55:20] [INFO  ] Script version: 1.1.0 
+[2026-03-12 09:55:20] [INFO  ] Log file: D:/OneDrive - NRCan RNCan/gs/doug-fir/data/qc/imputation/imputation_log_20260312_095520.txt 
+[2026-03-12 09:55:20] [INFO  ] Start time: 2026-03-12 09:55:20 PDT 
+[2026-03-12 09:55:20] [INFO  ] R version: R version 4.4.2 (2024-10-31 ucrt) 
+[2026-03-12 09:55:20] [INFO  ] Platform: x86_64-w64-mingw32 
+[2026-03-12 09:55:20] [INFO  ] OS type: windows 
+[2026-03-12 09:55:20] [INFO  ] Hostname: A159583 
+[2026-03-12 09:55:20] [INFO  ] User: bratclif 
+[2026-03-12 09:55:20] [INFO  ] Working directory: C:/Users/bratclif/Documents 
+[2026-03-12 09:55:20] [INFO  ] Cores available: 48 (using 46) 
+[2026-03-12 09:55:20] [INFO  ] R package versions: 
+[2026-03-12 09:55:20] [INFO  ]   SeqArray        1.46.3 
+[2026-03-12 09:55:20] [INFO  ]   SNPRelate       1.40.0 
+[2026-03-12 09:55:20] [INFO  ]   vcfR            1.16.0 
+[2026-03-12 09:55:21] [INFO  ]   Matrix          1.7.1 
+[2026-03-12 09:55:21] [INFO  ]   ggplot2         4.0.2 
+[2026-03-12 09:55:21] [INFO  ]   dplyr           1.1.4 
+[2026-03-12 09:55:21] [INFO  ]   tidyr           1.3.1 
+[2026-03-12 09:55:21] [INFO  ]   AGHmatrix       2.1.4 
+[2026-03-12 09:55:21] [INFO  ]   BGLR            1.1.4 
+[2026-03-12 09:55:21] [INFO  ] Configuration: 
+[2026-03-12 09:55:21] [INFO  ]   GDS input: D:/OneDrive - NRCan RNCan/gs/doug-fir/data/qc/doug_fir_postQC.gds 
+[2026-03-12 09:55:21] [INFO  ]   Output dir: D:/OneDrive - NRCan RNCan/gs/doug-fir/data/qc/imputation 
+[2026-03-12 09:55:21] [INFO  ]   DP mask: low < 3, high > 66 
+[2026-03-12 09:55:21] [INFO  ]   Java heap: 16 GB 
+[2026-03-12 09:55:21] [INFO  ] Methods selected: 
+[2026-03-12 09:55:21] [INFO  ]   [X] Mean imputation (baseline) 
+[2026-03-12 09:55:21] [INFO  ]   [ ] LinkImputeR 
+[2026-03-12 09:55:21] [INFO  ]   [ ] gtImputation (SOM) 
+[2026-03-12 09:55:21] [INFO  ]   [X] KGD depth-adjusted GRM 
+[2026-03-12 09:55:21] [INFO  ] File [PostQC GDS]: D:/OneDrive - NRCan RNCan/gs/doug-fir/data/qc/doug_fir_postQC.gds (1.21 GB) 
+[2026-03-12 09:55:26] [INFO  ]   MD5: e0c0127f2bebfdea403ebfdde5336d2d 
+[2026-03-12 09:55:26] [INFO  ]  
+[2026-03-12 09:55:26] [INFO  ] [Load Post-QC Data] ========== START: Load Post-QC Data ========== 
+[2026-03-12 09:55:26] [INFO  ] [Load] GDS file opened successfully. 
+[2026-03-12 09:55:26] [INFO  ] [Load] Allele field verified: REF,ALT comma-separated pairs. 
+[2026-03-12 09:55:30] [WARN  ] [Load] Unexpected SNP count: 106117. Expected ~5K-15K post-QC SNPs. 
+[2026-03-12 09:55:31] [INFO  ] [Load] Loaded: 1599 samples, 106117 SNPs from GDS 
+[2026-03-12 09:55:31] [INFO  ] [Load] Genotype matrix: 106117 SNPs x 1599 samples 
+[2026-03-12 09:55:31] [INFO  ] [Load] Overall missing rate (pre-DP-mask): 1.22% 
+[2026-03-12 09:55:31] [INFO  ] [Load] Extracting allele read depths (RO/AO)... 
+[2026-03-12 09:55:41] [INFO  ] [Load] Allele depths extracted: RO and AO matrices (106117 x 1599) 
+[2026-03-12 09:55:47] [INFO  ] [Load] Read depth (non-zero cells): median=9.0  mean=15.1  Q25=5  Q75=19  max=717 
+[2026-03-12 09:56:00] [INFO  ] [Load] Extracting genotype DP matrix for masking... 
+[2026-03-12 09:56:17] [INFO  ] [Load] Genotype DP mask: low (DP < 3) -> 13606741 calls masked 
+[2026-03-12 09:56:17] [INFO  ] [Load] Genotype DP mask: high (DP > 66) -> 2804466 calls masked 
+[2026-03-12 09:56:17] [INFO  ] [Load] Total genotype calls masked by DP: 16411207 (9.79% of non-NA calls) 
+[2026-03-12 09:56:21] [INFO  ] [Load] Overall missing rate after DP masking: 10.89% 
+[2026-03-12 09:56:22] [INFO  ] [Load] GDS file closed. 
+[2026-03-12 09:56:22] [INFO  ] [Load] Assigning generations... 
+[2026-03-12 09:56:22] [INFO  ] [Load] Generation source: pedigree_genotyped.csv (matched 1599 of 1599 samples) 
+[2026-03-12 09:56:22] [INFO  ] [Load] Generation assignment: G1=1276  G2=323  unassigned=0 
+[2026-03-12 09:56:23] [INFO  ] [Load] Post-DP-mask genotypes: 106117 SNPs x 1599 samples, overall missing = 10.89% 
+[2026-03-12 09:56:24] [INFO  ] [Load]   G1 (1276 samples): missing = 10.79% 
+[2026-03-12 09:56:24] [INFO  ] [Load]   G2 (323 samples): missing = 11.28% 
+[2026-03-12 09:56:24] [INFO  ] [Load] Computing G1-only allele frequencies (base population)... 
+[2026-03-12 09:56:28] [INFO  ] [Load] G1 AF computed from 1276 samples. 
+[2026-03-12 09:56:28] [INFO  ] [Load]   Finite G1 AF (genotypes): 106117 of 106117 SNPs 
+[2026-03-12 09:56:28] [INFO  ] [Load]   Finite G1 AF (reads):     106117 of 106117 SNPs 
+[2026-03-12 09:56:28] [INFO  ] [Load]   Polymorphic in G1 (genotypes): 106070 of 106117 SNPs 
+[2026-03-12 09:56:28] [INFO  ] [Load]   Polymorphic in G1 (reads):     106072 of 106117 SNPs 
+[2026-03-12 09:56:28] [INFO  ] [Load]   G1 MAF distribution: mean=0.0629  median=0.0432  Q25=0.0232  Q75=0.0769 
+[2026-03-12 09:56:28] [INFO  ] [Load] No external tools selected — skipping VCF export. 
+[2026-03-12 09:56:28] [TIMING] [Load Post-QC Data] ========== END: Load Post-QC Data (61.9 sec) ========== 
+[2026-03-12 09:56:28] [INFO  ] [Mean Imputation] ========== START: Mean Imputation ========== 
+[2026-03-12 09:56:35] [INFO  ] [MeanImp] Mean imputation: 18482448 missing genotypes filled. 
+[2026-03-12 09:56:36] [INFO  ] [MeanImp] Remaining NAs: 0 
+[2026-03-12 09:56:36] [INFO  ] [MeanImp] Building GRM (VanRaden Method 1) centered on G1 frequencies... 
+[2026-03-12 09:56:42] [INFO  ] [MeanImp] Zero-weighting 47 SNPs with zero/undefined G1 variance. 
+[2026-03-12 09:56:42] [INFO  ] [MeanImp] GRM denominator: 11464.33 (from 106070 informative SNPs) 
+[2026-03-12 09:59:26] [INFO  ] [MeanImp] GRM [Mean Imputation (pre-bending)]: dim = 1599 x 1599 
+[2026-03-12 09:59:26] [INFO  ] [MeanImp]   Diagonal:  mean=0.8522  sd=0.0840  range=[0.5917, 0.9930] 
+[2026-03-12 09:59:26] [INFO  ] [MeanImp]   Off-diag:  mean=0.0004  sd=0.0383  range=[-0.0484, 0.4926] 
+[2026-03-12 09:59:28] [INFO  ] [MeanImp]   Eigenvalues: min=-0.000000  max=25.9142  n_negative=1 
+[2026-03-12 09:59:28] [WARN  ] [MeanImp]   Most negative eigenvalue: -1.705303e-13 
+[2026-03-12 09:59:28] [INFO  ] [MeanImp]   G1 block: diag mean=0.8473 sd=0.0822  off-diag mean=-0.0007 
+[2026-03-12 09:59:28] [INFO  ] [MeanImp]   G2 block: diag mean=0.8713 sd=0.0883  off-diag mean=0.0214 
+[2026-03-12 09:59:28] [INFO  ] [MeanImp]   G1xG2 cross-block: mean=-0.0000  range=[-0.0435, 0.2668] 
+[2026-03-12 09:59:34] [INFO  ] [MeanImp] Bending Mean_Imp: 1 eigenvalues < 1.0e-06 (most negative: -1.691435e-13) -> set to 1.0e-06 
+[2026-03-12 10:00:11] [INFO  ] [MeanImp] File [Geno matrix]: D:/OneDrive - NRCan RNCan/gs/doug-fir/data/qc/imputation/geno_mean_imputed.rds (184.87 MB) 
+[2026-03-12 10:00:11] [INFO  ] [MeanImp] File [GRM]: D:/OneDrive - NRCan RNCan/gs/doug-fir/data/qc/imputation/GRM_mean_imputed.rds (19.48 MB) 
+[2026-03-12 10:00:11] [TIMING] [Mean Imputation] ========== END: Mean Imputation (222.8 sec) ========== 
+[2026-03-12 10:00:11] [INFO  ] [LinkImputeR] ========== START: LinkImputeR ========== 
+[2026-03-12 10:00:11] [INFO  ] [LinkImpR] Skipped (run_linkimputeR = FALSE) 
+[2026-03-12 10:00:11] [TIMING] [LinkImputeR] ========== END: LinkImputeR (0.0 sec) ========== 
+[2026-03-12 10:00:11] [INFO  ] [gtImputation (SOM)] ========== START: gtImputation (SOM) ========== 
+[2026-03-12 10:00:11] [INFO  ] [gtImp] Skipped (run_gtImputation = FALSE) 
+[2026-03-12 10:00:11] [TIMING] [gtImputation (SOM)] ========== END: gtImputation (SOM) (0.0 sec) ========== 
+[2026-03-12 10:00:11] [INFO  ] [KGD Depth-Adjusted GRM] ========== START: KGD Depth-Adjusted GRM ========== 
+[2026-03-12 10:00:11] [INFO  ] [KGD] Writing vcf2ra.py-compatible RA file for reproducibility... 
+[2026-03-12 10:01:34] [INFO  ] [KGD] File [RA file]: D:/OneDrive - NRCan RNCan/gs/doug-fir/data/qc/imputation/kgd/allele_counts.tsv (760.33 MB) 
+[2026-03-12 10:01:34] [INFO  ] [KGD] RA file: 106117 SNPs x 1599 samples 
+[2026-03-12 10:01:34] [INFO  ] [KGD] File [KGD source]: D:/OneDrive - NRCan RNCan/gs/doug-fir/tools/KGD/GBS-Chip-Gmatrix.R (164.3 KB) 
+[2026-03-12 10:01:34] [INFO  ] [KGD] Sourcing KGD (functions only, isolated env)... 
+[2026-03-12 10:01:39] [INFO  ] [KGD] Populating KGD globals from in-memory matrices... 
+[2026-03-12 10:02:10] [INFO  ] [KGD] KGD globals: nsnps=106117  nind=1599 
+[2026-03-12 10:02:10] [INFO  ] [KGD]   genon: 1599x106117  depth: 1599x106117  alleles: 1599x212234 
+[2026-03-12 10:02:13] [INFO  ] [KGD]   Mean depth (non-zero): 15.00  Call rate: 0.8911 
+[2026-03-12 10:02:13] [INFO  ] [KGD] Running KGD calcG() (calclevel=9, npc=4, G1-centered)... 
+[2026-03-12 10:21:16] [INFO  ] [KGD] GRM [KGD G5 (pre-bending)]: dim = 1599 x 1599 
+[2026-03-12 10:21:16] [INFO  ] [KGD]   Diagonal:  mean=1.7578  sd=0.0523  range=[1.5627, 1.9929] 
+[2026-03-12 10:21:16] [INFO  ] [KGD]   Off-diag:  mean=0.0789  sd=0.0883  range=[-0.0361, 1.0909] 
+[2026-03-12 10:21:18] [INFO  ] [KGD]   Eigenvalues: min=0.570845  max=129.5459  n_negative=0 
+[2026-03-12 10:21:18] [INFO  ] [KGD]   G1 block: diag mean=1.7510 sd=0.0478  off-diag mean=0.0761 
+[2026-03-12 10:21:18] [INFO  ] [KGD]   G2 block: diag mean=1.7850 sd=0.0600  off-diag mean=0.1267 
+[2026-03-12 10:21:18] [INFO  ] [KGD]   G1xG2 cross-block: mean=0.0783  range=[-0.0254, 0.5814] 
+[2026-03-12 10:21:24] [INFO  ] [KGD] PSD check KGD_G5: already positive definite (min eigenvalue: 5.708453e-01). 
+[2026-03-12 10:21:30] [INFO  ] [KGD] File [GRM]: D:/OneDrive - NRCan RNCan/gs/doug-fir/data/qc/imputation/GRM_kgd_depth_adjusted.rds (19.25 MB) 
+[2026-03-12 10:21:30] [INFO  ] [KGD] File [Full KGD result]: D:/OneDrive - NRCan RNCan/gs/doug-fir/data/qc/imputation/KGD_full_result.rds (58.21 MB) 
+[2026-03-12 10:21:30] [INFO  ] [KGD] KGD diagnostic plots (9 files) written to: D:/OneDrive - NRCan RNCan/gs/doug-fir/data/qc/imputation/kgd 
+[2026-03-12 10:21:30] [DEBUG ] [KGD]   Co-call-postQC_all.png 
+[2026-03-12 10:21:30] [DEBUG ] [KGD]   ColourKeypostQC_allheatmap.png 
+[2026-03-12 10:21:30] [DEBUG ] [KGD]   GcomparepostQC_all.png 
+[2026-03-12 10:21:30] [DEBUG ] [KGD]   GpostQC_all-diag.png 
+[2026-03-12 10:21:30] [DEBUG ] [KGD]   GpostQC_alldiagdepth.png 
+[2026-03-12 10:21:30] [DEBUG ] [KGD]   Heatmap-G5postQC_all.png 
+[2026-03-12 10:21:30] [DEBUG ] [KGD]   PC1v2G5postQC_all.png 
+[2026-03-12 10:21:30] [DEBUG ] [KGD]   PC1vDepthpostQC_all.png 
+[2026-03-12 10:21:30] [DEBUG ] [KGD]   PC1vInbpostQC_all.png 
+[2026-03-12 10:21:30] [INFO  ] [KGD] KGD environment removed (all KGD globals cleaned up). 
+[2026-03-12 10:21:30] [TIMING] [KGD Depth-Adjusted GRM] ========== END: KGD Depth-Adjusted GRM (1278.4 sec) ========== 
+[2026-03-12 10:21:30] [INFO  ] [Diagnostic Comparison] ========== START: Diagnostic Comparison ========== 
+[2026-03-12 10:21:30] [INFO  ] [Diag] Comparing GRM diagonal elements (self-relatedness)... 
+[2026-03-12 10:21:30] [INFO  ] [Diag] File [Gii comparison plot]: D:/OneDrive - NRCan RNCan/gs/doug-fir/data/qc/imputation/diagnostic_Gii_comparison.png (43.5 KB) 
+[2026-03-12 10:21:30] [INFO  ] [Diag] Pairwise off-diagonal GRM comparisons... 
+[2026-03-12 10:21:30] [INFO  ] [Diag] Pairwise Gij correlation: Mean_Imp vs KGD  r=0.9862 
+[2026-03-12 10:21:33] [INFO  ] [Diag] File [Gij plot]: D:/OneDrive - NRCan RNCan/gs/doug-fir/data/qc/imputation/diagnostic_Gij_mean_imp_vs_kgd.png (173.7 KB) 
+[2026-03-12 10:21:33] [INFO  ] [Diag] Generated 1 pairwise GRM comparison plots. 
+[2026-03-12 10:21:33] [INFO  ] [Diag]  
+[2026-03-12 10:21:33] [INFO  ] [Diag] === GRM Summary Statistics === 
+[2026-03-12 10:21:33] [INFO  ] [Diag] GRM [Mean_Imp]: dim = 1599 x 1599 
+[2026-03-12 10:21:33] [INFO  ] [Diag]   Diagonal:  mean=0.8522  sd=0.0840  range=[0.5917, 0.9930] 
+[2026-03-12 10:21:33] [INFO  ] [Diag]   Off-diag:  mean=0.0004  sd=0.0383  range=[-0.0484, 0.4926] 
+[2026-03-12 10:21:35] [INFO  ] [Diag]   Eigenvalues: min=0.000001  max=25.9142  n_negative=0 
+[2026-03-12 10:21:35] [INFO  ] [Diag]   G1 block: diag mean=0.8473 sd=0.0822  off-diag mean=-0.0007 
+[2026-03-12 10:21:35] [INFO  ] [Diag]   G2 block: diag mean=0.8713 sd=0.0883  off-diag mean=0.0214 
+[2026-03-12 10:21:35] [INFO  ] [Diag]   G1xG2 cross-block: mean=-0.0000  range=[-0.0435, 0.2668] 
+[2026-03-12 10:21:35] [INFO  ] [Diag] GRM [KGD]: dim = 1599 x 1599 
+[2026-03-12 10:21:35] [INFO  ] [Diag]   Diagonal:  mean=1.7578  sd=0.0523  range=[1.5627, 1.9929] 
+[2026-03-12 10:21:35] [INFO  ] [Diag]   Off-diag:  mean=0.0789  sd=0.0883  range=[-0.0361, 1.0909] 
+[2026-03-12 10:21:36] [INFO  ] [Diag]   Eigenvalues: min=0.570845  max=129.5459  n_negative=0 
+[2026-03-12 10:21:36] [INFO  ] [Diag]   G1 block: diag mean=1.7510 sd=0.0478  off-diag mean=0.0761 
+[2026-03-12 10:21:37] [INFO  ] [Diag]   G2 block: diag mean=1.7850 sd=0.0600  off-diag mean=0.1267 
+[2026-03-12 10:21:37] [INFO  ] [Diag]   G1xG2 cross-block: mean=0.0783  range=[-0.0254, 0.5814] 
+[2026-03-12 10:21:37] [INFO  ] [Diag]  
+[2026-03-12 10:21:37] [INFO  ] [Diag] ssGBLUP note: For H-matrix compatibility, verify that 
+[2026-03-12 10:21:37] [INFO  ] [Diag]   mean(diag(G)[G1]) ~ mean(diag(A)[G1]) before blending. 
+[2026-03-12 10:21:37] [TIMING] [Diagnostic Comparison] ========== END: Diagnostic Comparison (6.7 sec) ========== 
+[2026-03-12 10:21:37] [INFO  ] [Prepare BGLR Outputs] ========== START: Prepare BGLR Outputs ========== 
+[2026-03-12 10:21:37] [INFO  ] [BGLR] Saved common output files: 
+[2026-03-12 10:21:37] [INFO  ] [BGLR] File [Generation assignment]: D:/OneDrive - NRCan RNCan/gs/doug-fir/data/qc/imputation/generation_assignment.rds (5.3 KB) 
+[2026-03-12 10:21:37] [INFO  ] [BGLR] File [G1 AF (genotypes)]: D:/OneDrive - NRCan RNCan/gs/doug-fir/data/qc/imputation/allele_freq_g1.rds (1.11 MB) 
+[2026-03-12 10:21:37] [INFO  ] [BGLR] File [G1 AF (reads)]: D:/OneDrive - NRCan RNCan/gs/doug-fir/data/qc/imputation/allele_freq_g1_reads.rds (1.23 MB) 
+[2026-03-12 10:21:37] [INFO  ] [BGLR] File [Mean imp geno]: D:/OneDrive - NRCan RNCan/gs/doug-fir/data/qc/imputation/geno_mean_imputed.rds (184.87 MB) 
+[2026-03-12 10:21:37] [INFO  ] [BGLR] File [Mean imp GRM]: D:/OneDrive - NRCan RNCan/gs/doug-fir/data/qc/imputation/GRM_mean_imputed.rds (19.48 MB) 
+[2026-03-12 10:21:37] [INFO  ] [BGLR] File [KGD GRM]: D:/OneDrive - NRCan RNCan/gs/doug-fir/data/qc/imputation/GRM_kgd_depth_adjusted.rds (19.25 MB) 
+[2026-03-12 10:21:37] [INFO  ] [BGLR] All GRMs centered on G1 (base population) allele frequencies. 
+[2026-03-12 10:21:37] [INFO  ] [BGLR]  
+[2026-03-12 10:21:37] [INFO  ] [BGLR] Usage in BGLR: 
+[2026-03-12 10:21:37] [INFO  ] [BGLR]   G <- readRDS("GRM_kgd_depth_adjusted.rds") 
+[2026-03-12 10:21:37] [INFO  ] [BGLR]   fit <- BGLR(y = y, ETA = list(list(K = G, model = "RKHS")), ...) 
+[2026-03-12 10:21:37] [INFO  ] [BGLR]  
+[2026-03-12 10:21:37] [INFO  ] [BGLR] For ssGBLUP (H-matrix), blend G with A: 
+[2026-03-12 10:21:37] [INFO  ] [BGLR]   Verify: mean(diag(G)[G1]) ~ mean(diag(A)[G1]) before blending. 
+[2026-03-12 10:21:37] [TIMING] [Prepare BGLR Outputs] ========== END: Prepare BGLR Outputs (0.4 sec) ========== 
+[2026-03-12 10:21:37] [INFO  ]  
+[2026-03-12 10:21:37] [INFO  ] ############################################################ 
+[2026-03-12 10:21:37] [INFO  ] ##               END-OF-RUN SUMMARY                       ## 
+[2026-03-12 10:21:37] [INFO  ] ############################################################ 
+[2026-03-12 10:21:37] [INFO  ]  
+[2026-03-12 10:21:37] [TIMING] --- Section Timings --- 
+[2026-03-12 10:21:37] [TIMING]   Load Post-QC Data                 61.9 sec  (1.0 min) 
+[2026-03-12 10:21:37] [TIMING]   Mean Imputation                  222.8 sec  (3.7 min) 
+[2026-03-12 10:21:37] [TIMING]   LinkImputeR                        0.0 sec 
+[2026-03-12 10:21:37] [TIMING]   gtImputation (SOM)                 0.0 sec 
+[2026-03-12 10:21:37] [TIMING]   KGD Depth-Adjusted GRM          1278.4 sec  (21.3 min) 
+[2026-03-12 10:21:37] [TIMING]   Diagnostic Comparison              6.7 sec 
+[2026-03-12 10:21:37] [TIMING]   Prepare BGLR Outputs               0.4 sec 
+[2026-03-12 10:21:37] [TIMING]   TOTAL                           1570.2 sec  (26.2 min) 
+[2026-03-12 10:21:37] [WARN  ]  
+[2026-03-12 10:21:37] [WARN  ] --- 3 Warnings Accumulated --- 
+[2026-03-12 10:21:37] [WARN  ]   * [Load] Unexpected SNP count: 106117. Expected ~5K-15K post-QC SNPs. 
+[2026-03-12 10:21:37] [WARN  ]   * [MeanImp]   Most negative eigenvalue: -1.705303e-13 
+[2026-03-12 10:21:37] [WARN  ]   * [global]  
+[2026-03-12 10:21:37] [WARN  ]   * [global] --- 3 Warnings Accumulated --- 
+[2026-03-12 10:21:37] [INFO  ]  
+[2026-03-12 10:21:37] [INFO  ] Log file: D:/OneDrive - NRCan RNCan/gs/doug-fir/data/qc/imputation/imputation_log_20260312_095520.txt 
+[2026-03-12 10:21:37] [INFO  ] Completed: 2026-03-12 10:21:37 

@@ -1,0 +1,528 @@
+Loading required package: gdsfmt
+
+Attaching package: 'dplyr'
+
+The following objects are masked from 'package:stats':
+
+    filter, lag
+
+The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union
+
+Warning message:
+package 'dplyr' was built under R version 4.4.3 
+Warning message:
+package 'readr' was built under R version 4.4.3 
+
+Attaching package: 'stringr'
+
+The following object is masked from 'package:SeqArray':
+
+    fixed
+
+Warning message:
+package 'stringr' was built under R version 4.4.3 
+Warning message:
+package 'ggplot2' was built under R version 4.4.3 
+Loading pedigree...
+  pedigree_full rows: 1922
+          used  (Mb) gc trigger  (Mb) max used  (Mb)
+Ncells 3447686 184.2    5670381 302.9  5670381 302.9
+Vcells 5865487  44.8   12255594  93.6  9077023  69.3
+  G1: 1377  |  G2: 490
+
+Reading GDS...
+  Raw variants : 562449
+  Raw samples  : 1872
+  Control samples excluded before QC : 10
+    UBC_071001_P23_WE04, UBC_071001_P23_WE02, UBC_071001_P23_WE07, UBC_071001_P23_WE10, UBC_071001_P23_WE08, UBC_071001_P23_WE06, UBC_071001_P23_WE05, UBC_071001_P23_WE09, UBC_071001_P23_WE01, UBC_071001_P23_WE03 
+  Samples entering QC : 1862
+  Removed multiallelic / non-SNP variants : 79613
+  Biallelic SNPs retained before GT extraction : 482836
+          used  (Mb) gc trigger  (Mb) max used  (Mb)
+Ncells 3488344 186.3    5670381 302.9  5670381 302.9
+Vcells 7073975  54.0   14786712 112.9 10631412  81.2
+Warning message:
+2395 duplicate SNP IDs detected; suffixing with _dup1, _dup2, ... 
+           used  (Mb) gc trigger  (Mb) max used  (Mb)
+Ncells  3994989 213.4    7617778 406.9  5670381 302.9
+Vcells 14119385 107.8   23790332 181.6 19545815 149.2
+
+-- Chromosome / contig summary --
+  Total unique contigs : 20531
+  Total SNPs mapped    : 482836
+  Major contigs (>= 90% cumulative SNPs) : 13226
+  Minor scaffolds                          : 7305
+  SNPs on major contigs : 434558 (90.0%)
+  SNPs on minor scaffolds : 48278 (10.0%)
+
+  Top 20 contigs by SNP count:
+    gi_451288777_gb_GAEK01022484.1     348 SNPs  (0.1%)
+    gi_451292588_gb_GAEK01018673.1     338 SNPs  (0.1%)
+    gi_451290555_gb_GAEK01020706.1     322 SNPs  (0.1%)
+    gi_451298221_gb_GAEK01013040.1     303 SNPs  (0.1%)
+    gi_451287757_gb_GAEK01023504.1     296 SNPs  (0.1%)
+    gi_451288836_gb_GAEK01022425.1     258 SNPs  (0.1%)
+    gi_451297802_gb_GAEK01013459.1     242 SNPs  (0.1%)
+    gi_451289325_gb_GAEK01021936.1     241 SNPs  (0.0%)
+    gi_451311147_gb_GAEK01000114.1     241 SNPs  (0.0%)
+    gi_451289175_gb_GAEK01022086.1     223 SNPs  (0.0%)
+    gi_451288240_gb_GAEK01023021.1     215 SNPs  (0.0%)
+    gi_451290920_gb_GAEK01020341.1     215 SNPs  (0.0%)
+    gi_451294519_gb_GAEK01016742.1     215 SNPs  (0.0%)
+    gi_451290629_gb_GAEK01020632.1     214 SNPs  (0.0%)
+    gi_451297224_gb_GAEK01014037.1     214 SNPs  (0.0%)
+    gi_451288614_gb_GAEK01022647.1     213 SNPs  (0.0%)
+    gi_451288543_gb_GAEK01022718.1     204 SNPs  (0.0%)
+    gi_451289499_gb_GAEK01021762.1     204 SNPs  (0.0%)
+    gi_451290017_gb_GAEK01021244.1     203 SNPs  (0.0%)
+    gi_451288676_gb_GAEK01022585.1     200 SNPs  (0.0%)
+    ... plus 20511 more contigs
+Warning message:
+50+ contigs needed to reach 90% of SNPs; assembly may be highly fragmented. Consider whether contig-level missingness is meaningful. 
+           used  (Mb) gc trigger  (Mb) max used  (Mb)
+Ncells  3996156 213.5    7617778 406.9  5670381 302.9
+Vcells 14193860 108.3   23790332 181.6 19545815 149.2
+
+======================================================================
+  STAGE A: Genotype extraction + per-genotype DP/GQ masking
+======================================================================
+
+  Extracting dosage matrix ($dosage_alt)...
+  Before masking - missing: 13.73%
+
+  [Dosage mode ON] Attempting to extract RO/AO from GDS...
+  RO and AO fields found -- computing read-count dosage.
+  Dosage matrix: 1862 samples x 482836 SNPs
+  Dosage mean (non-NA): 0.1430
+  Dosage missing: 13.73%
+  Extracting DP matrix (annotation/format/DP)...
+  Global mean genotype DP : 33.17
+  Applying DP < 3 mask... (161948886 genotypes masked)
+  Applying DP > 66 mask (2x mean)... (60013679 genotypes masked)
+             used    (Mb) gc trigger    (Mb)   max used    (Mb)
+Ncells    3997436   213.5    7617778   406.9    5670381   302.9
+Vcells 1363725271 10404.4 5644723675 43065.9 8819880741 67290.4
+  After masking  - missing: 38.42%
+  Dosage after masking - missing: 38.42%
+  GDS handle closed (all data in memory).
+  Genotype matrix: 1862 samples x 482836 SNPs
+             used    (Mb) gc trigger    (Mb)   max used    (Mb)
+Ncells    3997202   213.5    7617778   406.9    5670381   302.9
+Vcells 1363200782 10400.4 4515778940 34452.7 8819880741 67290.4
+
+-- Sample ID verification --
+  VCF samples in pedigree : 1862 / 1862
+  WARNING - in pedigree but not VCF:
+    UBC_071001_P10_WC07, UBC_071001_P10_WB03, UBC_071001_P10_WA03, UBC_071001_P09_WE03, UBC_071001_P09_WC03 
+             used    (Mb) gc trigger    (Mb)   max used    (Mb)
+Ncells    3997540   213.5    7617778   406.9    5670381   302.9
+Vcells 1363201650 10400.5 4515778940 34452.7 8819880741 67290.4
+
+======================================================================
+  STAGE B: Coarse sample pre-filter (dead + low-depth samples)
+======================================================================
+
+  Call rate threshold for dead samples : 50%
+  Samples with call rate < 50%       : 252
+  Mean DP threshold                   : >= 5
+  Samples with mean DP < 5 (new)     : 0
+  Removing 252 samples total (CR + DP)...
+  Samples remaining after coarse filter: 1610
+             used   (Mb) gc trigger    (Mb)   max used    (Mb)
+Ncells    3997590  213.5    7617778   406.9    5670381   302.9
+Vcells 1181658808 9015.4 3612623152 27562.2 8819880741 67290.4
+
+======================================================================
+  STAGE C: Site filtering pass 1 (call rate, QUAL, clusters, monomorphic)
+======================================================================
+
+  SNPs entering Stage C               : 482836
+  Fail call rate < 70%               : 202687
+  Fail QUAL < 20                      : 165177
+  Monomorphic (MAF = 0)               : 22600
+  Total removed in Stage C            : 296888
+  SNPs remaining after Stage C        : 185948
+            used   (Mb) gc trigger    (Mb)   max used    (Mb)
+Ncells   4000179  213.7    7617778   406.9    5670381   302.9
+Vcells 466017726 3555.5 2890098522 22049.8 8819880741 67290.4
+
+======================================================================
+  STAGE D: Excess het + HWE excess-het filter (G1 only)
+======================================================================
+
+  G1 individuals available : 1281
+  Fail excess het ratio (Hobs/Hexp > 1.25) : 40762
+  Excess-het skipped / NA (Hexp < 0.05)    : 48617
+  Fail HWE excess-het (p < 1e-05, G1)     : 61941
+  HWE excess-het only (not caught by ratio): 21179
+  Total fail Stage D (ratio OR HWE)    : 61941
+
+  Het-ratio sensitivity (alternative thresholds):
+    Evaluable SNPs (Hexp >= 0.05) : 137331
+    HWE excess-het fails (all thresholds): 61941
+
+    Threshold   Ratio-only    HWE-only    Combined     Survive  
+    > 1.20          47304       14637       61941      124007
+    > 1.25          40762       21179       61941      124007 <-- CURRENT
+    > 1.30          35422       26519       61941      124007
+    > 1.35          31135       30806       61941      124007
+    > 1.40          27481       34460       61941      124007
+    > 1.50          21738       40203       61941      124007
+
+  Marginal SNPs saved for Mendelian stratification (ratio 1.25-1.40): 13281
+  SNPs remaining after Stage D         : 124007
+            used   (Mb) gc trigger    (Mb)   max used    (Mb)
+Ncells   4001869  213.8    7617778   406.9    5670381   302.9
+Vcells 329846396 2516.6 2312078818 17639.8 8819880741 67290.4
+
+======================================================================
+  STAGE E: Refined sample QC (recomputed on clean sites)
+======================================================================
+
+  Computing sample stats on 124007 clean SNPs...
+  Computing per-sample F_hat (inbreeding coefficient)...
+  F_hat summary (all samples):
+    Mean: -0.0267  Median: -0.0234  SD: 0.0593
+    G1 (n=1281): mean=-0.0212  range=[-0.4638, 0.3128]
+    G2 (n=329): mean=-0.0481  range=[-0.4008, 0.3059]
+  WARNING: 18 samples with F_hat > 0.10
+  Call rate < 80% (WARN) : 162 samples
+  Call rate < 70% (FAIL) : 2 samples
+  Het outliers (>3 SD within generation) : 9 samples
+  Total flagged for removal (Stage E)  : 11
+  Total samples removed (Stage B + E)  : 263
+  Plot saved: sample_qc_hetplot.png
+
+  Samples retained after Stage E: 1599 / 1862 (excl. 252 dead from Stage B)
+            used   (Mb) gc trigger    (Mb)   max used    (Mb)
+Ncells   4284553  228.9    7617778   406.9    7617778   406.9
+Vcells 328288442 2504.7 1849663055 14111.9 8819880741 67290.4
+
+======================================================================
+  STAGE F: Site filtering pass 2 (MAF on final sample set)
+======================================================================
+
+  SNPs entering Stage F               : 124007
+  Fail MAF < 0.01                     : 17890
+  Newly monomorphic after sample QC   : 0
+  Total removed in Stage F            : 17890
+  SNPs remaining after Stage F (pass QC): 106117
+
+-- Writing all-SNP audit ledger --
+  Wrote all-SNP QC audit ledger: 482836 rows
+
+-- Building SNP QC summary --
+  SNPs passing all QC (Stages A-F)     : 106117
+  SNPs passing QC + MAF >= 0.01 (GS)   : 106117
+  SNPs with |CR_G1 - CR_G2| >= 0.10   : 8699
+            used (Mb) gc trigger    (Mb)   max used    (Mb)
+Ncells   4286970  229    7617778   406.9    7617778   406.9
+Vcells 296473737 2262 1479730444 11289.5 8819880741 67290.4
+
+-- Missingness by site x chromosome --
+  Contig groups for missingness: 10167 (13226 major + 1 collapsed scaffold group)
+  Wrote site x chromosome missingness summary: 50835 rows
+            used   (Mb) gc trigger   (Mb)   max used    (Mb)
+Ncells   4288170  229.1    7617778  406.9    7617778   406.9
+Vcells 297592316 2270.5 1183784356 9031.6 8819880741 67290.4
+
+-- Building pedigree panel --
+  Pedigree panel thresholds: CR >= 0.98, MAF >= 0.05, Hobs/Hexp <= 1.15, |CR_G1-CR_G2| <= 0.05
+  Pedigree panel before thinning : 9647 SNPs
+  Pedigree panel after thinning  : 2518 SNPs
+  Physical thinning distance     : 50000 bp
+Warning message:
+Only 2518 pedigree-panel SNPs available; pedigree checks may have limited power. 
+
+-- Writing filtered outputs --
+  Wrote GS SNP list: 106117 SNPs
+            used   (Mb) gc trigger   (Mb)   max used    (Mb)
+Ncells   4288782  229.1    7617778  406.9    7617778   406.9
+Vcells 297876279 2272.7  947027485 7225.3 8819880741 67290.4
+
+-- Pedigree check: G1-G2 IBS0 verification --
+  SNPs used for IBS0 pedigree panel : 2518
+  G2 offspring with >= 1 genotyped parent : 297
+
+  IBS0 results (n=297 offspring):
+    Sire: PASS=217  LOW=0  FAIL=0  NA=80
+    Dam : PASS=190  LOW=0  FAIL=0  NA=107
+            used   (Mb) gc trigger   (Mb)   max used    (Mb)
+Ncells   4290427  229.2    7617778  406.9    7617778   406.9
+Vcells 297881429 2272.7  947027485 7225.3 8819880741 67290.4
+
+-- Mendelian error check for complete trios --
+  Complete trios (both parents genotyped) : 110
+  Median per-trio error rate  : 0.0766
+  Mean per-trio error rate    : 0.0773
+  Max per-trio error rate     : 0.1096 (UBC_071001_P19_WE08)
+  SNPs with error rate > 0.05  : 1711 / 2518 (68.0%)
+            used   (Mb) gc trigger   (Mb)   max used    (Mb)
+Ncells   4290137  229.2    7617778  406.9    7617778   406.9
+Vcells 297896961 2272.8  947027485 7225.3 8819880741 67290.4
+
+-- Mendelian error stratified by het-ratio bin (conifer diagnostic) --
+
+  Pass-QC pedigree panel: Mendelian error by het-ratio bin:
+    Het ratio      nSNPs    Mean err  Median err
+    1.00-1.10       1920      0.0726      0.0700
+    1.10-1.15        598      0.0930      0.0917
+
+  Marginal SNPs (removed at 1.25, would survive at 1.40): 13281 SNPs
+
+  Marginal SNPs: Mendelian error by het-ratio sub-bin:
+    Het ratio      nSNPs    Mean err  Median err   >5% err
+    1.25-1.30       5340      0.1104      0.1000      3925
+    1.30-1.35       4287      0.0996      0.0845      2892
+    1.35-1.40       3654      0.0902      0.0758      2322
+  Marginal SNPs (ratio 1.25-1.40) overall:
+    n=13281  mean_err=0.1014  median_err=0.0889
+            used   (Mb) gc trigger   (Mb)   max used    (Mb)
+Ncells   4291759  229.3    7617778  406.9    7617778   406.9
+Vcells 298091613 2274.3  947027485 7225.3 8819880741 67290.4
+            used   (Mb) gc trigger   (Mb)   max used    (Mb)
+Ncells   4290931  229.2    7617778  406.9    7617778   406.9
+Vcells 287309096 2192.0  947027485 7225.3 8819880741 67290.4
+
+-- Duplicate / identity check (all samples) --
+  Samples: 1599  |  SNPs: 2518
+  Computing pairwise concordance matrix...
+  No duplicate pairs detected (concordance threshold: 0.99)
+
+  G1 pairwise concordance (n=1276 founders, 813450 pairs):
+    Mean: 0.7438  Max: 0.8311  Min: 0.6952
+    No G1 duplicates detected.
+            used   (Mb) gc trigger   (Mb)   max used    (Mb)
+Ncells   4291715  229.3    7617778  406.9    7617778   406.9
+Vcells 289755554 2210.7  947027485 7225.3 8819880741 67290.4
+
+-- Saving pass-QC genotype matrix (RDS) --
+  Wrote 0/1/2 genotype matrix: 1599 samples x 106117 SNPs
+  Wrote dosage matrix: 1599 samples x 106117 SNPs
+
+  Dosage diagnostic summary (pass-QC SNPs):
+    Missing rate: 10.89%
+    Mean dosage (non-NA): 0.0859
+    SD dosage: 0.3028
+    Dosage vs hard-call AF correlation: 0.9826
+    Mean |dosage_AF - hardcall_AF|: 0.0250
+    Max  |dosage_AF - hardcall_AF|: 0.1084
+    SNPs with |AF diff| > 0.05: 15048
+
+  Dosage variance ratio (observed / HWE-expected):
+    Evaluable SNPs: 106117
+    Mean: 0.5121  Median: 0.4095  SD: 0.3614
+    Min: 0.0495  Max: 1.6506
+
+    Distribution by bin (all SNPs):
+      <0.50        :  68075 SNPs ( 64.2%)
+      0.50-0.75    :  13815 SNPs ( 13.0%)
+      0.75-0.90    :   2835 SNPs (  2.7%)
+      0.90-1.00    :   1596 SNPs (  1.5%)
+      1.00-1.10    :   4693 SNPs (  4.4%)
+      1.10-1.25    :  12325 SNPs ( 11.6%)
+      1.25-1.50    :   2755 SNPs (  2.6%)
+      >1.50        :     23 SNPs (  0.0%)
+
+    DVR by MAF bin (v4.6.1 stratified diagnostic):
+    MAF range         nSNPs  Mean DVR   Med DVR    DVR<0.75
+    MAF 0-0.05        59648     0.465     0.389  49341 (82.7%)
+    MAF 0.05-0.10     31763     0.442     0.370  26991 (85.0%)
+    MAF 0.10-0.20      9877     0.698     0.591   5558 (56.3%)
+    MAF 0.20-0.50      4829     1.180     1.181      0 ( 0.0%)
+
+    NOTE: 5578 / 14732 common SNPs (MAF >= 0.10) with DVR < 0.75 -- possible residual paralogs
+    INFO: 76312 / 91385 rare SNPs (MAF < 0.10) with DVR < 0.75 -- expected dosage compression at low MAF
+            used   (Mb) gc trigger   (Mb)   max used    (Mb)
+Ncells   4292133  229.3    7617778  406.9    7617778   406.9
+Vcells 374761975 2859.3 1136512982 8671.0 8819880741 67290.4
+            used   (Mb) gc trigger   (Mb)   max used    (Mb)
+Ncells   4291397  229.2    7617778  406.9    7617778   406.9
+Vcells 289813446 2211.2  909210386 6936.8 8819880741 67290.4
+
+-- Exporting post-QC subset GDS --
+Export to 'D:/OneDrive - NRCan RNCan/gs/doug-fir/data/qc/doug_fir_postQC.gds':
+    sample.id (1,599)  [md5: 6b7ea9a00c696e6ee81704dd93869eb4]
+    variant.id (106,117)  [md5: ca3b63c9dea9c699ddc4632b83e4a72e]
+    position  [md5: 4ed2d67bc5fee0e79f3e7a64a1a97a0d]
+    chromosome  [md5: 3037cec6a5bc4a2b340184e44840ecc1]
+    allele  [md5: c72944999d575203ff9fee9089ec0acc]
+    genotype  [md5: 69ec03dbe6755e5014acd603408e7dd3]
+    phase  [md5: 662adf7268c60571b99504cc9c179aa0]
+    annotation/id  [md5: e0293406c04157392c6ab84f9b47e2b5]
+    annotation/qual  [md5: 6d63c9703abc3e3565c156e5773bcc85]
+    annotation/filter  [md5: 1ee398b8ae3195f61b6cd92890920f12]
+    annotation/info/NS  [md5: 4600378fcc246c130212c538ed13c97b]
+    annotation/info/DP  [md5: d47dc097789bf24cf37be1403dca0969]
+    annotation/info/DPB  [md5: 872e4450c79b65bf1df70264ac4ed819]
+    annotation/info/AC  [md5: 8eb162c3e9f58013e5b13942176b7397]
+    annotation/info/AN  [md5: 81ddca4c3900556e2a8a7155609c2c9e]
+    annotation/info/AF  [md5: 4beaa5d4487295ffbca781562b7d926e]
+    annotation/info/RO  [md5: 5dc9496c11546d51215d8063e0d16bcd]
+    annotation/info/AO  [md5: 45999eb91083c35e4757defdc65d3e86]
+    annotation/info/PRO  [md5: 2dadd814cc4ceeaba67fc9ec84fa7b61]
+    annotation/info/PAO  [md5: 2dadd814cc4ceeaba67fc9ec84fa7b61]
+    annotation/info/QR  [md5: 32154d0855e5fdef5e00e81e97de24c7]
+    annotation/info/QA  [md5: b712478278ddffd4b9702ccfef314cc9]
+    annotation/info/PQR  [md5: 2dadd814cc4ceeaba67fc9ec84fa7b61]
+    annotation/info/PQA  [md5: 2dadd814cc4ceeaba67fc9ec84fa7b61]
+    annotation/info/SRF  [md5: ba8eaa02be65b833f93b6e7283db315a]
+    annotation/info/SRR  [md5: d630ea0da968d6ee3f460611535bf1ab]
+    annotation/info/SAF  [md5: 30d04c5c1c98e36ec5b6a729e3233a90]
+    annotation/info/SAR  [md5: 4244cdd92fd0b2e8c0200e75f0ec46d7]
+    annotation/info/SRP  [md5: 6d5c5171cc129f7f607606e63334bc9d]
+    annotation/info/SAP  [md5: bdb18fe6d51e37606dfb11653c157a6a]
+    annotation/info/AB  [md5: 0253c2d01c200a36ad152d3e3079c0e0]
+    annotation/info/ABP  [md5: 4e7dfe00a84e981830b41e06c5c08c9a]
+    annotation/info/RUN  [md5: e9ab6d400fabbc65314a797f8f744e2e]
+    annotation/info/RPP  [md5: d9621c3cc6e9f6ff09dc724783fa5c34]
+    annotation/info/RPPR  [md5: cc0a36415f03d2c3502a4c3a47bf7e14]
+    annotation/info/RPL  [md5: f1389de7fef119c4c1fbd4c727684182]
+    annotation/info/RPR  [md5: a54ce19c81a7dc673e9c1070e8761a07]
+    annotation/info/EPP  [md5: 28969ba4f9b50503fa517c18fcef2d45]
+    annotation/info/EPPR  [md5: e5fb3ae446d53d8845f758a2d990df53]
+    annotation/info/DPRA  [md5: c11da8c29694cf48df4fe1c1f86225fe]
+    annotation/info/ODDS  [md5: e5f2032abb5c3de31e4b3b4834f74e4d]
+    annotation/info/GTI  [md5: ccc9ccab955827479d1b106238a1a247]
+    annotation/info/TYPE  [md5: ac5c42f6c0ede8f0170b302a23054d0c]
+    annotation/info/CIGAR  [md5: a28ec22b04682866f69666515141a3c8]
+    annotation/info/NUMALT  [md5: e9ab6d400fabbc65314a797f8f744e2e]
+    annotation/info/MEANALT  [md5: fffb714b2aa83e35d21800f81a1c4276]
+    annotation/info/LEN  [md5: e9ab6d400fabbc65314a797f8f744e2e]
+    annotation/info/MQM  [md5: 8e2f7a937061a6d75f549e8c1d8f7358]
+    annotation/info/MQMR  [md5: aa0d09376b50489b7e4aca3fdf9780b4]
+    annotation/info/PAIRED  [md5: 2dadd814cc4ceeaba67fc9ec84fa7b61]
+    annotation/info/PAIREDR  [md5: 2dadd814cc4ceeaba67fc9ec84fa7b61]
+    annotation/info/technology.illumina  [md5: 37457c0e276a29d7cfc861f2217049e7]
+    annotation/format/GQ  [md5: 75205560857a1a64878ff1e27e38ef5a]
+    annotation/format/GL  [md5: 395f0c41248b5117803a0da63642d580]
+    annotation/format/DP  [md5: 935053ee5cf49f0a6955dc7bd040d2a6]
+    annotation/format/RO  [md5: 9bb9140e6dd858ad22251b4d16ca8561]
+    annotation/format/QR  [md5: 15c62ee751e4386c636112660bbe9439]
+    annotation/format/AO  [md5: 7edafa0739849eaa6c884878297737a4]
+    annotation/format/QA  [md5: 9047dc8526e23c44dbe587f8169a6ae6]
+Done.
+Optimize the access efficiency ...
+Clean up the fragments of GDS file:
+    open the file 'D:/OneDrive - NRCan RNCan/gs/doug-fir/data/qc/doug_fir_postQC.gds' (1.1G)
+    # of fragments: 16354
+    save to 'D:/OneDrive - NRCan RNCan/gs/doug-fir/data/qc/doug_fir_postQC.gds.tmp'
+    rename 'D:/OneDrive - NRCan RNCan/gs/doug-fir/data/qc/doug_fir_postQC.gds.tmp' (1.1G, reduced: 189.1K)
+    # of fragments: 221
+  Wrote post-QC GDS: D:/OneDrive - NRCan RNCan/gs/doug-fir/data/qc/doug_fir_postQC.gds
+  Samples exported : 1599
+  SNPs exported    : 106117
+  Verified exported GDS dimensions: 1599 samples x 106117 variants
+  Sample ID match   : YES
+  Variant ID match  : YES
+            used   (Mb) gc trigger   (Mb)   max used    (Mb)
+Ncells   4303818  229.9    7617778  406.9    7617778   406.9
+Vcells 289840578 2211.4  909210386 6936.8 8819880741 67290.4
+
+======================================================================
+  POST-QC DIAGNOSTIC SUMMARY
+======================================================================
+
+  Final matrix: 1599 samples x 106117 SNPs
+  Overall missing rate: 10.89%
+
+  Per-sample call rate (post-QC):
+    Mean: 0.8911  Median: 0.9103  Min: 0.7005  Max: 0.9592
+
+  Per-sample heterozygosity (post-QC):
+    Mean: 0.1094  Median: 0.1090  SD: 0.0081
+
+  Per-SNP MAF (post-QC):
+    Mean: 0.0633  Median: 0.0433  Min: 0.0100  Max: 0.5000
+
+  Per-SNP call rate (post-QC):
+    Mean: 0.8911  Median: 0.9118  Min: 0.6979
+
+  Per-SNP observed heterozygosity (post-QC):
+    Mean: 0.1116  Median: 0.0852  Max: 0.5860
+
+  MAF spectrum (post-QC):
+    MAF (0.00, 0.01] : 9 SNPs (0.0%)
+    MAF (0.01, 0.05] : 59639 SNPs (56.2%)
+    MAF (0.05, 0.10] : 31763 SNPs (29.9%)
+    MAF (0.10, 0.20] : 9877 SNPs (9.3%)
+    MAF (0.20, 0.50] : 4829 SNPs (4.6%)
+
+  Transition / transversion ratio (post-QC):
+    Transitions    : 61407
+    Transversions  : 44710
+    Ts/Tv ratio    : 1.373
+    NOTE: Ts/Tv < 1.5 -- lower than WGS expectation (~2.0), but typical for
+    reduced-representation or capture data on fragmented/transcriptome references.
+    Not necessarily indicative of false-positive enrichment in this context.
+
+  Samples by generation:
+    G1 : 1276
+    G2 : 323
+            used   (Mb) gc trigger   (Mb)   max used    (Mb)
+Ncells   4304509  229.9    7617778  406.9    7617778   406.9
+Vcells 289842076 2211.4  909210386 6936.8 8819880741 67290.4
+
+== FINAL QC SUMMARY ============================================
+  Raw samples                               : 1862
+  Raw biallelic SNPs after hard filtering   : 482836
+  -- Staged filtering --
+  Stage A: Genotype masking (DP 3-66)      : enabled
+  Stage B: Dead/low-depth samples            : 252 removed
+  Stage C: Site CR + QUAL + clusters + mono  : 296888 removed
+  Stage D: Excess het + HWE (G1)             : 61941 removed
+  Stage E: Sample CR < 70% + het outliers  : 11 removed
+  Stage F: MAF < 0.01                       : 17890 removed
+  -- Final counts --
+  Samples retained                          : 1599
+  SNPs passing all QC (Stages A-F)          : 106117
+  SNPs passing QC + MAF >= 0.01 (GS)        : 106117
+  Pedigree panel SNPs                       : 2518
+  IBS0 offspring checks                     : 297
+  Potential pedigree errors (IBS0 FAIL)     : 0
+  Mendelian error trios checked             : 110
+  Trios with elevated error rate            : 0
+  SNPs with Mendelian error > 0.05          : 1711
+  Duplicate sample pairs detected           : 0
+  -- Dosage output --
+  Dosage matrix saved: snps_qc_pass_dosage.rds
+  Dosage AF vs hard-call AF: included in snp_qc_summary.csv
+
+Staged filtering order:
+  A) Genotype-level DP masking (DP 3-66) + GQ masking
+  B) Remove dead (CR < 50%) + low-depth (mean DP < 5) samples
+  C) Site filter pass 1: CR >= 70% + QUAL >= 20 + SNP cluster (3 in 0bp) + monomorphic
+  D) Excess het ratio (> 1.25) + HWE excess-het (p < 1e-05) on G1
+  E) Refined sample QC: call rate + het outliers (recomputed on clean sites)
+  F) MAF filter (recomputed on final sample set)
+
+Output files:
+  qc/snps_qc_pass_012.rds
+  qc/snps_qc_pass_dosage.rds
+  qc/snps_qc_pass_map.csv
+  qc/snps_qc_pass_gs_ids.txt
+  qc/snps_qc_pedigree_ids.txt
+  qc/snps_qc_pedigree_map.csv
+  qc/sample_qc_summary.csv
+  qc/sample_missingness_by_group.csv
+  qc/sample_missingness_by_site_chromosome.csv
+  qc/snp_qc_summary.csv
+  qc/snp_qc_audit_all_snps.csv
+  qc/stage_c_snp_failures.csv
+  qc/stage_d_snp_failures.csv
+  qc/stage_f_snp_failures.csv
+  qc/pedigree_check_ibs0.csv
+  qc/pedigree_parent_search.csv         (if FAIL pairs found)
+  qc/pedigree_mendelian_trios.csv        (if complete trios exist)
+  qc/pedigree_mendelian_per_snp.csv      (if complete trios exist)
+  qc/het_ratio_marginal_mendel.csv       (if marginal SNPs + trios exist)
+  qc/duplicate_sample_pairs.csv          (if duplicates detected)
+  qc/sample_qc_hetplot.png
+  qc/qc_report.txt
+  qc/doug_fir_postQC.gds
+Pipeline complete.
+           used  (Mb) gc trigger   (Mb)   max used    (Mb)
+Ncells  3986528 213.0    7617778  406.9    7617778   406.9
+Vcells 12728681  97.2  727368309 5549.4 8819880741 67290.4
