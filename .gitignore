@@ -1,0 +1,98 @@
+# =============================================================
+# Douglas-fir genomic selection project
+# Strategy: ignore EVERYTHING, then whitelist .R and .bat files
+# =============================================================
+
+# --- Deny all by default ---
+*
+
+# --- Allow directory traversal (required for nested whitelisting) ---
+!*/
+
+# --- Whitelist code files ---
+!*.R
+!*.bat
+
+# --- Block entire directories (even if they contain .R or .bat) ---
+tools/
+
+# --- Whitelist repo metadata ---
+!.gitignore
+!README.md
+!LICENSE
+
+# --- Explicitly block large / sensitive files even if somehow staged ---
+# GDS and genomic data
+*.gds
+*.vcf
+*.vcf.gz
+*.bam
+*.sam
+*.bed
+*.bim
+*.fam
+*.ped
+*.map
+*.raw
+*.traw
+
+# R data objects (genotype matrices, model fits, etc.)
+*.rds
+*.RData
+*.rda
+*.Rhistory
+
+# Binary / compiled
+*.o
+*.so
+*.dll
+*.exe
+
+# Office documents and PDFs
+*.docx
+*.doc
+*.xlsx
+*.xls
+*.pptx
+*.pdf
+*.csv
+*.tsv
+
+# Images / figures
+*.png
+*.jpg
+*.jpeg
+*.tiff
+*.bmp
+*.svg
+
+# Compressed archives
+*.zip
+*.tar
+*.tar.gz
+*.gz
+*.bz2
+*.7z
+
+# OS junk
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+.DS_Store
+.DS_Store?
+
+# OneDrive metadata
+.~lock.*
+~$*
+
+# R session files
+.Rproj.user/
+.Rproj.user
+*.Rproj
+
+# Temporary / log files
+*.log
+*.tmp
+*.bak
+*.swp
+*~
